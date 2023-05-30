@@ -1,0 +1,77 @@
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.main-txt {
+  background-image: linear-gradient(90deg, var(--secondary), var(--primary));
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.img-container {
+  background-image: url("./assets/me.JPG");
+  border-radius: 36% 64% 25% 75% / 69% 36% 64% 31%;
+  height: 390px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  animation: morph 2s linear infinite alternate-reverse;
+}
+
+.img-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--primary);
+  border-radius: 24% 76% 35% 65% / 62% 69% 31% 38%;
+  animation: morph-before 2.3s linear infinite alternate-reverse;
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  width: 110%;
+  aspect-ratio: 1;
+  z-index: -2;
+  background-color: var(--secondary);
+  border-radius: 46% 54% 46% 54% / 68% 33% 67% 32%;
+  animation: turn 10s linear infinite alternate-reverse;
+}
+
+@keyframes morph {
+  to {
+    border-radius: 73% 27% 71% 29% / 34% 73% 27% 66%;
+  }
+}
+
+@keyframes morph-before {
+  to {
+    border-radius: 70% 30% 36% 64% / 34% 33% 67% 66%;
+    width: 105%;
+    height: 90%;
+  }
+}
+
+@keyframes turn {
+  to {
+    transform: rotate(1turn);
+    bottom: 20%;
+  }
+}
