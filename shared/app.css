@@ -9,8 +9,9 @@
 }
 
 :root {
+  --bg: #ededed;
   font-family: "Poppins", sans-serif;
-  background-color: #ededed;
+  background-color: var(--bg);
   font-size: 16px;
 
   --primary: #2c3657;
@@ -23,7 +24,7 @@ header {
   left: 0;
   right: 0;
   padding: 1rem;
-  background-color: inherit;
+  background-color: var(--bg);
 
   display: flex;
   align-items: center;
@@ -42,20 +43,6 @@ nav > a {
 nav > a:hover {
   background: linear-gradient(145deg, #fefefe, #d1d1d1);
   box-shadow: 6px 6px 12px #c9c9c9, -6px -6px 12px #ffffff;
-}
-
-button {
-  appearance: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.card {
-  padding: 1rem;
-  border-radius: 12px;
-  background: #ededed;
-  box-shadow: -10px 10px 16px #d1d1d1, 10px -10px 16px #ffffff;
 }
 
 a:link {
@@ -87,4 +74,36 @@ a:active {
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary);
   /* border: 2px solid #555555; */
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    display: none;
+    z-index: 5;
+    position: fixed;
+    top: 92px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: var(--bg);
+    padding: 1rem;
+    box-shadow: inset 8px 8px 18px #cccccc, inset -8px -8px 18px #ffffff;
+    text-align: center;
+  }
+
+  #menu::before {
+    content: "\2630";
+    font-size: 2.5rem;
+    color: var(--primary);
+  }
+
+  #m:checked ~ nav {
+    display: flex;
+  }
+
+  #m:checked + #menu::before {
+    content: "\2715";
+    color: red;
+  }
 }
