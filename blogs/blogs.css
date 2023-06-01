@@ -1,0 +1,5 @@
+@import "../shared/card.css";
+
+.blog {
+  display: grid;
+}

@@ -30,7 +30,11 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-
+#logo {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
 nav > a {
   color: black;
   font-weight: 600;
@@ -83,12 +87,15 @@ a:active {
     position: fixed;
     top: 92px;
     right: 0;
-    left: 0;
+    bottom: 0;
+    left: 100%;
     flex-direction: column;
     gap: 0.5rem;
     background-color: var(--bg);
     padding: 1rem;
+    overflow: hidden;
     box-shadow: inset 8px 8px 18px #cccccc, inset -8px -8px 18px #ffffff;
+    /* box-shadow: 8px 8px 18px #cccccc, -8px -8px 18px #ffffff; */
     text-align: center;
   }
 
@@ -100,10 +107,17 @@ a:active {
 
   #m:checked ~ nav {
     display: flex;
+    animation: slide 300ms ease-out forwards;
   }
 
   #m:checked + #menu::before {
     content: "\2715";
     color: red;
+  }
+
+  @keyframes slide {
+    to {
+      left: 10%;
+    }
   }
 }
