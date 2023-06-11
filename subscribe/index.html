@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../shared/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../shared/app.css" />
-    <title>Alqasim's Blog | About</title>
+    <link rel="stylesheet" href="./subscribe.css" />
+    <title>Alqasim's Blog | Subscribe</title>
   </head>
   <body>
     <header>
-      <a href="/">
+      <a href="/" id="logo">
         <img src="../shared/logo.svg" alt="logo" width="50px" />
       </a>
 
+      <input type="checkbox" id="m" hidden />
+      <label for="m" id="menu"> </label>
       <nav>
         <a href="/">Home</a>
-        <a href="/blog">Blog</a>
-        <a href="/about">About</a>
+        <a href="/blogs">Blogs</a>
+        <a href="/subscribe">Subscribe</a>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <h3>Subscribe to my blog</h3>
+      <form action="">
+        <input type="email" name="email" placeholder="email" />
+        <br />
+        <button class="main-btn">Subscribe</button>
+      </form>
+    </main>
   </body>
 </html>

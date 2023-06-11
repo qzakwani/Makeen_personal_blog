@@ -1,0 +1,40 @@
+@import "../shared/btn.css";
+
+.date {
+  color: gray;
+}
+
+.img {
+  text-align: center;
+  padding: 1rem;
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.intro {
+  margin-top: 2rem;
+}
+
+section {
+  margin-bottom: 1rem;
+  text-indent: 1rem;
+}
+
+.conclusion {
+  margin-bottom: 2rem;
+}
+
+.sub-title {
+  padding: 0.5rem 1rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
